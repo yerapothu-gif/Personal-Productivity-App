@@ -1,0 +1,24 @@
+.aura-wrap {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.sphere {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(72px);
+  opacity: 0.55;
+}
+
+.s1 { width: 420px; height: 420px; background: radial-gradient(circle, #f9c0d4, #f4a7bb); top: -80px; left: -80px; animation: drift1 9s ease-in-out infinite; }
+.s2 { width: 320px; height: 320px; background: radial-gradient(circle, #fce4ec, #e8638c55); bottom: -60px; right: 160px; animation: drift2 12s ease-in-out infinite; }
+.s3 { width: 260px; height: 260px; background: radial-gradient(circle, #ffe0ec, #f48fb1); top: 40%; left: 30%; animation: drift3 10s ease-in-out infinite; }
+.s4 { width: 180px; height: 180px; background: radial-gradient(circle, #ffc2d4, #e8638c88); top: 20%; right: -30px; animation: drift1 14s ease-in-out infinite reverse; }
+.s5 { width: 200px; height: 200px; background: radial-gradient(circle, #ffeaf1, #f8bbd0); bottom: 20%; left: 10%; animation: drift2 11s ease-in-out infinite; }
+
+@keyframes drift1 { 0%,100%{transform:translate(0,0)} 33%{transform:translate(30px,-20px)} 66%{transform:translate(-15px,25px)} }
+@keyframes drift2 { 0%,100%{transform:translate(0,0)} 33%{transform:translate(-25px,15px)} 66%{transform:translate(20px,-30px)} }
+@keyframes drift3 { 0%,100%{transform:translate(0,0)} 50%{transform:translate(20px,20px)} }
