@@ -14,9 +14,10 @@ export default function App() {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/dashboard" element={
-          <PrivateRoute><Dashboard /></PrivateRoute>
-        } />
+        <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
+        <Route path="/planner" element={<PrivateRoute><Dashboard page="planner" /></PrivateRoute>} />
+        <Route path="/todo" element={<PrivateRoute><Dashboard page="todo" /></PrivateRoute>} />
+        <Route path="/diary" element={<PrivateRoute><Dashboard page="diary" /></PrivateRoute>} />
         <Route path="*" element={<Navigate to="/login" />} />
       </Routes>
     </BrowserRouter>
