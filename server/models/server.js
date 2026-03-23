@@ -1,14 +1,11 @@
-const mongoose = require('mongoose');
+const app = require('./app');
+const connectDB = require('./config/db');
+require('dotenv').config();
 
-const slotSchema = new mongoose.Schema({
-  hour: { type: String, required: true },
-  task: { type: String, default: '' },
-  addedToTodo: { type: Boolean, default: false }
+const PORT = process.env.PORT || 5000;
+
+connectDB();
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT} 🌸`);
 });
-
-const plannerSchema = new mongoose.Schema({
-  date: { type: String, required: true, unique: true },
-  slots: [slotSchema]
-});
-
-module.exports = mongoose.model('Planner', plannerSchema);
