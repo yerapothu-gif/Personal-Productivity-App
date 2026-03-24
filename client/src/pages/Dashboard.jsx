@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import AuraSpheres from '../components/AuraSpheres'
 import Sidebar from '../components/Sidebar'
 import Planner from './Planner'
+import Todo from './Todo'
 import './Dashboard.css'
 
 export default function Dashboard() {
@@ -55,10 +56,17 @@ export default function Dashboard() {
                 Quick Actions
               </div>
               <div className="quick-actions">
-                <button className="qa-btn" onClick={() => setActivePage('planner')}>Open Planner →</button>
-                <button className="qa-btn" onClick={() => setActivePage('todo')}>Open To-Do →</button>
-                <button className="qa-btn" onClick={() => setActivePage('diary')}>Open Diary →</button>
+                <button className="qa-btn" onClick={() => setActivePage('planner')}>Open Planner 📅</button>
+                <button className="qa-btn" onClick={() => setActivePage('todo')}>Open To-Do 📋</button>
+                <button className="qa-btn" onClick={() => setActivePage('diary')}>Open Diary 📓</button>
               </div>
+            </div>
+            <div className="dash-card">
+              <div className="dash-card-title">
+                <div className="dash-icon">📋</div>
+                Mini To-Do
+              </div>
+              <Todo mini={true} />
             </div>
           </div>
         )}
@@ -70,9 +78,8 @@ export default function Dashboard() {
         )}
 
         {activePage === 'todo' && (
-          <div className="page-card coming-soon">
-            <div>📋</div>
-            <p>To-Do coming soon!</p>
+          <div className="page-card">
+            <Todo mini={false} />
           </div>
         )}
 
