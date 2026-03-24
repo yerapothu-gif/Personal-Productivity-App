@@ -4,6 +4,7 @@ import AuraSpheres from '../components/AuraSpheres'
 import Sidebar from '../components/Sidebar'
 import Planner from './Planner'
 import Todo from './Todo'
+import Diary from './Diary'          // ← NEW
 import './Dashboard.css'
 
 export default function Dashboard() {
@@ -25,8 +26,8 @@ export default function Dashboard() {
 
   const pageTitle = () => {
     if (activePage === 'dashboard') return <>{greeting}, <span>{user?.name || 'lovely'} ✨</span></>
-    if (activePage === 'planner') return <>Daily <span>Planner 📅</span></>
-    if (activePage === 'todo') return <>My <span>To-Dos ✅</span></>
+    if (activePage === 'planner')   return <>Daily <span>Planner 📅</span></>
+    if (activePage === 'todo')      return <>My <span>To-Dos ✅</span></>
     return <>Dear <span>Diary 📓</span></>
   }
 
@@ -84,9 +85,8 @@ export default function Dashboard() {
         )}
 
         {activePage === 'diary' && (
-          <div className="page-card coming-soon">
-            <div>📓</div>
-            <p>Diary coming soon!</p>
+          <div className="page-card">
+            <Diary />                  {/* ← replaced coming-soon */}
           </div>
         )}
 
